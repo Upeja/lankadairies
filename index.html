@@ -33,9 +33,12 @@
     align-items: center;
     padding: 10px 20px;
     justify-content: space-between;
-    position: relative;
+    position: fixed; /* Keeps it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar stays above other elements */
 }
-
 .nav-menu {
     list-style: none;
     display: flex;
@@ -834,6 +837,13 @@
                 </div>
             
             </div>
+            <style>
+                @media (max-width: 576px) {
+                    .product-card {
+                        margin-top: 50px;
+                    }
+                }
+            </style>
         </div>
     </section>
     <section class="our-brands">
@@ -984,6 +994,14 @@
         <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
     </footer>
     <script>
+        $(document).ready(function () {
+            $(".footer-nav a").click(function () {
+                $(".footer-nav a").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.querySelector(".menu-toggle");
             const navMenu = document.querySelector(".nav-menu");
@@ -1003,32 +1021,6 @@
         console.log("Navbar loaded");
       </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let slides = document.querySelectorAll('.hero-slideshow img');
-        let currentSlide = 0;
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        setInterval(nextSlide, 3000);
-        $(document).ready(function () {
-            $(".footer-nav a").click(function () {
-                $(".footer-nav a").removeClass("active");
-                $(this).addClass("active");
-            });
-        });
-        document.querySelectorAll('.dropdown-toggle').forEach(item => {
-        item.addEventListener('click', event => {
-            let dropdownMenu = event.target.nextElementSibling;
-            if (dropdownMenu) {
-                dropdownMenu.classList.toggle('show');
-            }
-        });
-    });
-    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
