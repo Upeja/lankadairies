@@ -306,6 +306,9 @@ p {
 
 /* Mobile screens (max-width: 576px) */
 @media (max-width: 576px) {
+    .hero-video {
+        height: auto;
+    }
     .hero-section {
         height: 60vh;
     }
@@ -395,8 +398,8 @@ p {
             <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
-    <div class="hero-section text-center position-relative">
-        <video class="hero-video w-100 h-100" autoplay muted loop>
+    <div class="hero-section text-center"></div>
+        <video class="hero-video" autoplay muted loop>
             <source src="video/fresh.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
