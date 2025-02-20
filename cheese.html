@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fcdc;
+        }
+        .navbar {
+  background-color: #8bc34a; /* Green color */
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo {
+    height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.navbar {
+    background-color: #8bc34a;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-item a:hover {
+    background-color: #689f38;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8bc34a;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #8bc34a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-item a {
+        padding: 12px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: visible;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 70px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .top-section {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .main-image {
+            max-width: 500px;
+        }
+        .header-section {
+            flex: 1;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .product-header {
+            color: #3c8224;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: -100px;
+            margin-bottom: 50px;
+        }
+        .product-images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .product-images img {
+            width: 100px;
+            border-radius: 5px;
+        }
+        
+        .content-section {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+            text-align: justify;
+            width: 100%;
+        }
+        .pack-info {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .pack-sizes {
+            font-weight: bold;
+            color: #3c8224;
+            margin-top: 20px;
+        }
+        .pack-details {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+        .inquire-button {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            background-color: #9bb972;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .inquire-button:hover {
+            background-color: #7c9e5d;
+        }
+
+        .product-item {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-item:hover {
+            transform: scale(1.1);
+        }
+        .btn-sm {
+            margin-top: 5px;
+            margin-bottom: 50px;
+        }
+        #productDisplay {
+            border: 2px solid #28a745;
+            text-align: center;
+        }
+        .product-box {
+    background-color: #ffffff; /* Light gray background */
+    padding: 10px; /* Reduced padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    max-width: 220px; /* Limit box width */
+    height: 180px;
+    margin-bottom: 100px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items towards the top */
+    position: relative;
+}
+
+.product-box img {
+    margin-top: -100px; /* Move the image up */
+}
+
+.product-box p {
+    margin-top: -5px; /* Move text up slightly */
+    
+    font-size: 17px; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    color: #146c2c; /* Darker text for better readability */
+    margin-top: -5px; /* Move text up */
+    letter-spacing: 0.5px; /* Improve readability */
+}
+
+.product-box button {
+    margin-top: -10px; /* Move button up */
+    color: #ffffff;
+    background-color: #d0dc9c;
+    border: none;
+}
+     
+
+        .footer {
+    background-color: #088c3c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;}
+
+.footer-nav a.active,
+.footer-nav a:hover {
+    color: #a6ff00;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .hero-video {
+        height: 60vh;
+    }
+    .hero-text {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* For mobile phones (480px and below) */
+@media (max-width: 480px) {
+    
+    .hero-video {
+        height: 50vh;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+
+    .footer-nav a {
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+/* For large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .hero-text {
+        font-size: 2.5rem;
+    }
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="Images/logo.jpg" alt="Dairy Brand Logo" class="logo me-2"> 
+        </a>
+    
+        <!-- Toggle Button for Mobile -->
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+        </button>
+    
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item">
+                <a href="aboutus.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="focus.html">Focus</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="ourfarms.html">Our Farms</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="products.html">Products</a>
+                <ul class="dropdown">
+                    <li><a href="freshmilk.html">Fresh Milk</a></li>
+                    <li><a href="flavored.html">Flavoured Milk</a></li>
+                    <li><a href="cheese.html">Cheese & Butter</a></li>
+                    <li><a href="yoghurt.html">Yoghurt</a></li>
+                    <li><a href="juices.html">Juices</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="brands.html">Brands</a>
+              <ul class="dropdown">
+                <li><a href="ambewela.html">Ambewela</a></li>
+                <li><a href="daily.html">Daily</a></li>
+                <li><a href="myjuicee.html">My Juicee</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="subsidiaries.html">Subsidiaries</a></li>
+            <li class="nav-item"><a href="innovation.html">Innovation</a></li>
+           
+            <li class="nav-item"><a href="newscenter.html">News Center</a></li>
+            <li class="nav-item">
+              <a href="#">Investor Relations</a>
+              <ul class="dropdown">
+                  <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                  <li><a href="reports.html">Reports</a></li>
+                  </ul>
+                  </li>
+            <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <video class="hero-video" autoplay muted loop>
+            <source src="video/productstvc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container mt-5">
+        <!-- Top Section: Display Selected Product -->
+        
+        <div class="top-section">
+            <img src="Images/cheesenw.png" alt="Main Cheese" class="main-image">
+            <div class="header-section">
+                <div class="product-header">Ambewela Cheese</div>
+                <div class="product-images">
+                    <div class="product-item">
+                        <img src="Images/edam.png" alt="Edam Cheese">
+                        <p>Edam <br>Cheese</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="Images/gauda.png" alt="Gouda Cheese">
+                        <p>Gouda <br>Cheese</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="Images/proceed.png" alt="Ambewela Cheese">
+                        <p>Ambewela<br> Cheese</p>
+                    </div>
+                    <div class="product-item">
+                        <img src="Images/parmesan.png" alt="Parmesan Cheese">
+                        <p>Parmesan<br> Cheese</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="content-section">
+                <div class="product-description">
+                    Cheeses are produced both at the New Zealand farm in Pattipola and Ambewela Products Pvt Ltd in Ambewela. We use milk sourced only from Ambewela in the process to ensure the highest quality standards thus delivering on the brand promise to the consumers. The modern state-of-the-art factory has the capability of producing cheese in mass scale using mechanized processors. However, the types of cheeses produced in a more European pallet as APPL caters to the hospitality sector than the domestic market. APPL produces the following varieties of cheese. The flavor, texture, weight, size and quality can be managed better in this form of mechanized production process.
+                </div>
+                <div class="pack-info">
+                    <div class="pack-sizes">Pack Sizes</div>
+                    <div class="pack-details">
+                        Cheese Slices (Edam) - kg<br>
+                        Cheese Slices (Gouda) - kg<br>
+                        Ambewela Cheese (Spread) - 50ml
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <a href="#" class="inquire-button">Inquire More</a>
+            </div>
+        
+    </div>   
+        <!-- Bottom Section: Product Selection -->
+<!-- Bottom Section: Product Selection -->
+<h4 class="text-center mt-5">Other Products</h4>
+<div class="row justify-content-center mt-3">
+    <div class="col-6 col-md-4 col-lg-2 mb-3">
+    <div class="product-box">
+        <div class="product-item">
+        <img src="Images/freshmilk.png" class="img-fluid" alt="Product 1">
+        <p>Fresh Milk</p>
+        <button class="btn btn-success btn-sm" onclick="window.location.href='freshmilk.html'">Read More</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2 mb-3">
+    <div class="product-box">
+        <div class="product-item">
+        <img src="Images/flavoured.png" class="img-fluid" alt="Product 2">
+        <p>Flavored Milk</p>
+        <button class="btn btn-success btn-sm" onclick="window.location.href='flavored.html'">Read More</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2 mb-3">
+    <div class="product-box">
+        <div class="product-item">
+        <img src="Images/cheese.png" class="img-fluid" alt="Product 3">
+        <p>Ambewela Cheese</p>
+        <button class="btn btn-success btn-sm" onclick="window.location.href='cheese.html'">Read More</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2 mb-3">
+    <div class="product-box">
+        <div class="product-item">
+        <img src="Images/yoghurt.png" class="img-fluid" alt="Product 4">
+        <p>Yoghurt</p>
+        <button class="btn btn-success btn-sm" onclick="window.location.href='yoghurt.html'">Read More</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2 mb-3">
+    <div class="product-box">
+        <div class="product-item">
+        <img src="Images/myjuicee.png" class="img-fluid" alt="Product 5">
+        <p>Juices</p>
+        <button class="btn btn-success btn-sm" onclick="window.location.href='juices.html'">Read More</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script>
+        function changeProduct(image, title, description) {
+            document.getElementById('productImage').src = image;
+            document.getElementById('productDisplay').querySelector('h3').textContent = title;
+            document.getElementById('productDescription').textContent = description;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        
+            <nav class="footer-nav">
+                <a href="index.html" >Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="innovation.html">Innovation</a>
+                <a href="brands.html">Brands</a>
+                <a href="subsidiaries.html">Subsidiaries</a>
+                <a href="newscenter.html">News Center</a>
+                <a href="boardofdirectors.html">Investor Relations</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+            <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+        
+    </footer>
+<script>
+    $(document).ready(function () {
+        $(".footer-nav a").click(function () {
+            $(".footer-nav a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+  
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+    });
+  </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About History</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fcdc;
+        }
+        /* Navbar Styles */
+
+.logo {
+    height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.navbar {
+    background-color: #8bc34a;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-item a:hover {
+    background-color: #689f38;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8bc34a;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #8bc34a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-item a {
+        padding: 12px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+.hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: visible;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+    .full-width-info-section {
+        padding: 50px 0;
+        background: url('Images/hist2.jpg') center/cover no-repeat;
+        background-size: cover;
+        width: 100vw;
+        color: white; /* Ensures text is readable on the background */
+    }
+    .info-section .content {
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    .info-section h2 {
+        font-weight: bold;
+    }
+    .info-section p {
+        font-size: 1.1rem;
+    }
+    h2 {
+  color: #068c44;
+  font-weight: bold;
+}
+h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #068c44;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-item.left .content {
+  margin-right: auto;
+  text-align: justify;
+  max-width: 400px;
+  
+}
+
+.timeline-item.right .content {
+  margin-left: auto;
+  text-align: justify;
+  max-width: 400px;
+}
+
+.timeline-item.bottom .content {
+  text-align: justify;
+  max-width: 400px;
+  margin: -70px auto;
+}
+.timeline-item .content h5 {
+  font-size: 1.4rem;  /* Heading size for each timeline event */
+  color: #068c44;    /* Slightly darker green */
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.timeline-item .content p {
+  font-size: 1rem;   /* Paragraph text size */
+  color: #222222;       /* Soft gray for better readability */
+  line-height: 1.6;  /* Improved line spacing */
+  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #068c44;
+  border-radius: 50%;
+  border: 4px solid white;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-item.left::after,
+.timeline-item.right::after,
+.timeline-item.bottom::after {
+  top: 20px;
+}
+
+.timeline-item .content {
+  background: #f8fcdc;
+  border-radius: 10px;
+  margin-top: 40px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.timeline-item .content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.dotted-line-left,
+    .dotted-line-right {
+      position: absolute;
+      top: 20px;
+      border-top: 5px dotted #068c44;
+      width: 50px;
+    }
+    .dotted-line-left {
+      left: calc(50% - 60px);
+    }
+    .dotted-line-right {
+      left: calc(50% + 4px);
+    }
+    .timeline-year-left,
+    .timeline-year-right,
+    .timeline-year-bottom {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #068c44;
+      margin: 15px;
+    }
+    .timeline-year-left {
+      position: absolute;
+      top: 12px;
+      left: calc(50% - 140px);
+      margin: 30px;
+    }
+    .timeline-year-right {
+      position: absolute;
+      top: 12px;
+      left: calc(50% + 10px);
+      margin: 30px;
+    }
+    .timeline-year-bottom {
+      position: absolute;
+      top: 0px;
+      left: calc(50% + -60px);
+      margin: 30px;
+      
+    }
+.footer {
+            background-color: #088c3c;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .footer-nav a.active,
+        .footer-nav a:hover {
+            color: #a6ff00;
+            /* Highlighted Green */
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-item {
+        text-align: center;
+    }
+    .dropdown {
+        position: static;
+        width: 100%;
+    }
+    .hero-section {
+        height: 50vh;
+    }
+    .hero-video {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10%;
+    }
+    .timeline-item {
+        width: 100%;
+        text-align: center;
+    }
+    .timeline-item.left .content,
+    .timeline-item.right .content {
+        max-width: 100%;
+    }
+    .timeline-year-left,
+    .timeline-year-right {
+        left: 5%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 60px;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    .timeline-year-left,
+    .timeline-year-right {
+        font-size: 1.5rem;
+        left: 2%;
+    }
+    .timeline-item .content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .timeline::before {
+        left: 5%;
+    }
+    .timeline-item {
+        width: 100%;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .timeline-item.left .content,
+    .timeline-item.right .content,
+    .timeline-item.bottom .content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .timeline-item::after {
+        left: 5%;
+    }
+    .timeline-year-left,
+    .timeline-year-right,
+    .timeline-year-bottom {
+        left: 5%;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10px;
+    }
+    .timeline-item {
+        width: 100%;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .timeline-item.left .content,
+    .timeline-item.right .content,
+    .timeline-item.bottom .content {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .timeline-item::after {
+        left: 10px;
+    }
+    .timeline-year-left,
+    .timeline-year-right,
+    .timeline-year-bottom {
+        left: 10px;
+        font-size: 1.4rem;
+    }
+    .dotted-line-left,
+    .dotted-line-right {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline::before {
+        left: 5px;
+    }
+    .timeline-item {
+        width: 100%;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .timeline-item.left .content,
+    .timeline-item.right .content,
+    .timeline-item.bottom .content {
+        max-width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    .timeline-item::after {
+        left: 5px;
+    }
+    .timeline-year-left,
+    .timeline-year-right,
+    .timeline-year-bottom {
+        left: 5px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .footer-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* For mobile phones (480px and below) */
+@media (max-width: 480px) {
+
+    .footer {
+        padding: 15px;
+    }
+
+    .footer-nav a {
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+/* For large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .hero-text {
+        font-size: 2.5rem;
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="Images/logo.jpg" alt="Dairy Brand Logo" class="logo me-2"> 
+      </a>
+  
+      <!-- Toggle Button for Mobile -->
+      <button class="menu-toggle">
+          <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+      </button>
+  
+      <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item">
+              <a href="aboutus.html">About Us</a>
+              <ul class="dropdown">
+                  <li><a href="history.html">History</a></li>
+                  <li><a href="focus.html">Focus</a></li>
+                  <li><a href="people.html">People</a></li>
+                  <li><a href="ourfarms.html">Our Farms</a></li>
+              </ul>
+          </li>
+          <li class="nav-item">
+              <a href="products.html">Products</a>
+              <ul class="dropdown">
+                  <li><a href="freshmilk.html">Fresh Milk</a></li>
+                  <li><a href="flavored.html">Flavoured Milk</a></li>
+                  <li><a href="cheese.html">Cheese & Butter</a></li>
+                  <li><a href="yoghurt.html">Yoghurt</a></li>
+                  <li><a href="juices.html">Juices</a></li>
+              </ul>
+          </li>
+          <li class="nav-item"><a href="brands.html">Brands</a>
+            <ul class="dropdown">
+              <li><a href="ambewela.html">Ambewela</a></li>
+              <li><a href="daily.html">Daily</a></li>
+              <li><a href="myjuicee.html">My Juicee</a></li>
+              </ul>
+          </li>
+          <li class="nav-item"><a href="subsidiaries.html">Subsidiaries</a></li>
+          <li class="nav-item"><a href="innovation.html">Innovation</a></li>
+         
+          <li class="nav-item"><a href="newscenter.html">News Center</a></li>
+          <li class="nav-item">
+            <a href="#">Investor Relations</a>
+            <ul class="dropdown">
+                <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                </ul>
+                </li>
+          <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
+      </ul>
+  </nav>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <video class="hero-video" autoplay muted loop>
+            <source src="video/history.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Science and Innovation Section -->
+    <div class="full-width-info-section">
+        <div class="container text-center">
+            <h3 class="mb-5"> OUR FOUNDING STORY</h3>
+            <p> Lanka Milk Foods (CWE) PLC is a local brand with a proud history of over 40 years.  It has been committed to providing wholesome nutrition to generations of Sri Lankans through its wide variety 
+                of products and services. For years the brand has been consistently growing to compete against global and regional giants.  First established for packeting and distribution of imported milk 
+                powder, the brand has since then progressed to becoming one of the most innovative beverage and dairy product providers in the country. It is also home to the largest packing plant in South 
+                East Asia.
+                 Today, Lanka Milk Foods (CWE) PLC is more than a mere service provider, but a trusted name across the nation that transforms the lives of all its stakeholders by providing opportunities for 
+                economic growth and sustainability</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">OUR FOUNDING STORY</h2>
+        <div class="timeline">
+          <!-- First item (Right) -->
+          <div class="timeline-item right">
+            <div class="dotted-line-right"></div>
+          <div class="timeline-year-right">1994</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Incorporation of Lanka Dairies (Pvt) Limited (LDL) as the first subsidiary of Lanka Milk Foods (CWE) PLC and the pioneer in utilizing TetraPak technology for packing of raw milk
+
+              </p>
+              
+            </div>
+          </div>
+          
+          <!-- Second item (Left) -->
+          <div class="timeline-item left">
+            <div class="dotted-line-left"></div>
+          <div class="timeline-year-left">1996</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Commissioning the Lanka Dairies manufacturing facility with a USD 2.5mn worth initial investment.<br>
+                Dairy flavoured milk was introduced to the Sri Lankan market, initially with Chocolate and Vanilla variants. 
+                </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="dotted-line-right"></div>
+          <div class="timeline-year-right">1999-2001</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p> Capacity enhancement and upgrade of factory with an investment worth USD 1.5 Mn.<br>
+                My Juicee fruit nectar was introduced to the market
+            </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="dotted-line-left"></div>
+          <div class="timeline-year-left">2001</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Obtaining ISO 9001: 2000 certification for Quality Management Systems<br>
+                Acquisition of Ambewela Farm and New Zealand Farm from the Government and establishment of Ambewela Livestock Company and Pattipola Livestock Company<br>
+                Ambewela Fresh milk product launch, the leading brand of the company</p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="dotted-line-right"></div>
+          <div class="timeline-year-right">2006</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Establishment of Ambewela Products (Pvt) Limited
+              </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="dotted-line-left"></div>
+          <div class="timeline-year-left">2009</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Commencing Ambewela Yoghurt Production
+              </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="dotted-line-right"></div>
+          <div class="timeline-year-right">2010</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Upgrading milk reception, storage, and processing equipment worth - EU 295,000<br>
+                Commencement of exporting Lanka Dairies products to the Maldives market<br>
+                ISO 9001: 2008 (Quality Management Systems - Revision)</p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="dotted-line-left"></div>
+          <div class="timeline-year-left">2013</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Capacity enhancement and upgrade of LDL factory with an investment worth USD 6 Mn<br>
+                Introducing Kiddos 160ml, flavoured milk to the new product portfolio focusing on the kids
+            </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="dotted-line-right"></div>
+          <div class="timeline-year-right">2018</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Obtaining ISO 22000: 2005 (Food Safety Management System)<br>
+                Establishment of United Dairies Lanka (Pvt) Limited<br>
+                Strategic investment of LKR 5.6 billion to develop and expand herd and milking facilities at both farms
+            </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="dotted-line-left"></div>
+          <div class="timeline-year-left">2020</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p> Reached 10 million litres of annual milk production
+              </p>
+              
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="dotted-line-right"></div>
+          <div class="timeline-year-right">2021</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Celebrating 25 years in operations<br>
+                ISO 22000: 2018 (Food Safety Management System - Revision)
+                Current active FSMS
+            </p>
+              
+            </div>
+          </div>
+
+            <!-- Third item (Center/Down) -->
+            <div class="timeline-item bottom">
+            
+            <div class="timeline-year-bottom">2023</div>
+            <div class="content">
+              <img src="" alt="">
+              <h5></h5>
+              <p>Commencement of operations of the two UDL farm extensions at ALC Farms and PLC Farms<br>
+              Reached 15 million litres of annual milk production</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <nav class="footer-nav">
+          <a href="index.html" >Home</a>
+          <a href="aboutus.html" class="active">About Us</a>
+          <a href="products.html" >Products</a>
+          <a href="innovation.html">Innovation</a>
+          <a href="brands.html">Brands</a>
+          <a href="subsidiaries.html">Subsidiaries</a>
+          <a href="newscenter.html">News Center</a>
+          <a href="boardofdirectors.html">Investor Relations</a>
+          <a href="contactus.html" >Contact Us</a>
+      </nav>
+      <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+  </footer>
+  <script>
+      $(document).ready(function () {
+        $(".footer-nav a").click(function () {
+            $(".footer-nav a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+  
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

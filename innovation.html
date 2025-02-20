@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8fcdc;
+    }
+    /* Navbar Styles */
+
+.logo {
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.navbar {
+    background-color: #8bc34a;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the menu items */
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav-item a:hover {
+  background-color: #689f38;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #8bc34a;
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #8bc34a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-item a {
+    padding: 12px;
+    display: block;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.hero {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .subsidiaries-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .subsidiaries-section h2 {
+    color: #068c44;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  .subsidiary {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0px; /* Add some spacing between sections if needed */
+  background-color: #fffcf4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.subsidiary .col-md-6 {
+  padding: 0; /* Remove padding from columns */
+}
+
+.subsidiary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire column without distortion */
+}
+  .subsidiary img {
+    width: 100%;
+    height: auto;
+  }
+  .subsidiary-content {
+    
+    flex: 1;
+    padding: 40px 20px;
+  }
+  .subsidiary-title {
+  color: #068c44;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 30px;
+}
+
+.subsidiary-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  text-align: justify; /* Added justification */
+}
+
+.footer {
+  background-color: #088c3c;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;}
+
+    .footer-nav a.active,
+    .footer-nav a:hover {
+      color: #a6ff00;
+      /* Highlighted Green */
+    }
+
+    .copyright {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+            /* For tablets (768px and below) */
+@media (max-width: 768px) {
+
+  .hero-video {
+    height: 50vh;
+  }
+  .hero-text {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .subsidiary {
+    flex-direction: column;
+  }
+
+  .subsidiary .col-md-6 {
+    width: 100%;
+  }
+
+  .subsidiary img {
+    height: auto;
+  }
+
+  .subsidiary-content {
+    padding: 20px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-nav a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+/* For mobile phones (480px and below) */
+@media (max-width: 480px) {
+  
+  .hero-video {
+    height: 50vh;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+  }
+
+  .subsidiaries-section h2 {
+    font-size: 20px;
+  }
+
+  .subsidiary-title {
+    font-size: 16px;
+  }
+
+  .subsidiary-description {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .footer {
+    padding: 15px;
+  }
+
+  .footer-nav a {
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+}
+
+/* For large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .hero-text {
+    font-size: 2.5rem;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="Images/logo.jpg" alt="Dairy Brand Logo" class="logo me-2"> 
+    </a>
+
+    <!-- Toggle Button for Mobile -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+    </button>
+
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item">
+            <a href="aboutus.html">About Us</a>
+            <ul class="dropdown">
+                <li><a href="history.html">History</a></li>
+                <li><a href="focus.html">Focus</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="ourfarms.html">Our Farms</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="products.html">Products</a>
+            <ul class="dropdown">
+                <li><a href="freshmilk.html">Fresh Milk</a></li>
+                <li><a href="flavored.html">Flavoured Milk</a></li>
+                <li><a href="cheese.html">Cheese & Butter</a></li>
+                <li><a href="yoghurt.html">Yoghurt</a></li>
+                <li><a href="juices.html">Juices</a></li>
+            </ul>
+        </li>
+        <li class="nav-item"><a href="brands.html">Brands</a>
+          <ul class="dropdown">
+            <li><a href="ambewela.html">Ambewela</a></li>
+            <li><a href="daily.html">Daily</a></li>
+            <li><a href="myjuicee.html">My Juicee</a></li>
+            </ul>
+        </li>
+        <li class="nav-item"><a href="subsidiaries.html">Subsidiaries</a></li>
+        <li class="nav-item"><a href="innovation.html">Innovation</a></li>
+       
+        <li class="nav-item"><a href="newscenter.html">News Center</a></li>
+        <li class="nav-item">
+          <a href="#">Investor Relations</a>
+          <ul class="dropdown">
+              <li><a href="boardofdirectors.html">Board of Directors</a></li>
+              <li><a href="reports.html">Reports</a></li>
+              </ul>
+              </li>
+        <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
+    </ul>
+</nav>
+    
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+      <video class="hero-video" autoplay muted loop>
+          <source src="video/innovation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+
+    <div class="container subsidiaries-section">
+        <h2>Innovation</h2>
+        <p>At Lanka Dairies Limited, innovation is more than just progress—it is a commitment to quality, research, and animal health. Built on the strength of our heritage brands, we have consistently led Sri Lanka’s dairy industry, pioneering advancements in cutting-edge technology, sustainable practices, and scientific research.<br>
+          Our approach focuses on expanding farm milk production, strengthening processing capabilities, and maintaining sustainability as a core pillar of our corporate strategy. Through rigorous quality control, advanced research, and precision-driven animal health management, we ensure that every product meets the highest standards of purity, safety, and nutritional excellence.<br>
+          With a fully integrated supply chain and an unwavering commitment to innovation and sustainability, we continue to deliver a premium portfolio of dairy products trusted by generations. Our drive for excellence keeps us at the forefront of the industry, shaping the future of dairy with confidence, resilience, and an uncompromising focus on quality.
+          </p>
+      
+        <div class="subsidiary row">
+          <div class="col-md-6">
+            <img src="Images/qc.jpg" alt="Ambewela Farm">
+          </div>
+          <div class="col-md-6 subsidiary-content">
+            <div class="subsidiary-title">Quality Control</div>
+            <p class="subsidiary-description">
+              Lanka Dairies Limited currently maintains an internationally recognized Quality Management System (QMS) that complies with ISO 9001 requirements. This system ensures that stringent quality standards are upheld at every stage—from sourcing raw materials to the storage of finished products. To maintain excellence, samples undergo meticulous testing in fully equipped chemical and microbiological laboratories before processing.<br>
+Lanka Dairies Limited also operates its own Quality Assurance Division, which oversees environmental management, hygiene, and sanitation standards across all facilities. Additionally, an ultra-modern, fully automated packing plant, along with in-house laundry, water purification, and janitorial services, ensures superior control over quality and cleanliness at every stage of production
+
+            </p>
+          </div>
+        </div>
+      
+        <div class="subsidiary row">
+          <div class="col-md-6 order-md-2">
+            <img src="Images/res.jpg" alt="Pattipola Farm">
+          </div>
+          <div class="col-md-6 order-md-1 subsidiary-content">
+            <div class="subsidiary-title">Research
+            </div>
+            <p class="subsidiary-description">
+              Lanka Dairies Limited prioritizes research and development (R&D) as a key driver of continuous growth and innovation. Specialized research is conducted in artificial insemination to preserve and enhance superior cattle pedigree, ensuring a high-yielding and resilient herd.<br>
+The animal feed formulations are also developed in-house by the Lanka Dairies Limited R&D team, designed to maximize productivity while maintaining the highest quality standards across all dairy products. This science-driven approach ensures optimal nutrition for the herd, leading to superior milk yield and consistency.
+
+            </p>
+          </div>
+        </div>
+      
+        <div class="subsidiary row">
+          <div class="col-md-6">
+            <img src="Images/ani.jpg" alt="Ambewela Products">
+          </div>
+          <div class="col-md-6 subsidiary-content">
+            <div class="subsidiary-title">Animal Health</div>
+            <p class="subsidiary-description">
+              At Lanka Dairies Limited, the health and well-being of our cattle are paramount. Our herds are provided with safe, well-maintained enclosures, high-quality feed, and carefully regulated environmental conditions to ensure optimal living standards.<br>
+Special attention is given to the care of pregnant and milking cows, with dedicated protocols in place to support their health and productivity. Leading this effort is an internationally experienced veterinarian, who heads a specialized healthcare team equipped to deliver proactive monitoring and timely medical interventions whenever necessary.<br>
+Our commitment to animal welfare, precision farming, and veterinary excellence ensures that our cattle remain healthy, resilient, and capable of producing the highest-quality milk.
+
+            </p>
+          </div>
+        </div>
+      
+      </div>
+
+      <footer class="footer">
+        <nav class="footer-nav">
+            <a href="index.html" >Home</a>
+            <a href="aboutus.html" >About Us</a>
+            <a href="products.html" >Products</a>
+            <a href="innovation.html" class="active">Innovation</a>
+            <a href="brands.html">Brands</a>
+            <a href="subsidiaries.html">Subsidiaries</a>
+            <a href="newscenter.html">News Center</a>
+            <a href="boardofdirectors.html">Investor Relations</a>
+            <a href="contactus.html" >Contact Us</a>
+        </nav>
+        <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+    </footer>
+    <script>
+    $(document).ready(function () {
+        $(".footer-nav a").click(function () {
+            $(".footer-nav a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      menuToggle.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+      });
+  });
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

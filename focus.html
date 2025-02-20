@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Focus</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fcdc;
+        }
+        /* Navbar Styles */
+
+.logo {
+    height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.navbar {
+    background-color: #8bc34a;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-item a:hover {
+    background-color: #689f38;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8bc34a;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #8bc34a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-item a {
+        padding: 12px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: visible;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .full-width-info-section {
+            padding: 50px 0;
+            background: url('Images/focus2.jpg') center/cover no-repeat;
+            background-size: cover;
+            width: 100vw;
+            color: white;
+        }
+        .info-section .content {
+            max-width: 1140px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .info-section h2 {
+            font-weight: bold;
+        }
+        .info-section p {
+            font-size: 1.1rem;
+        }
+        .info-boxes-section {
+            padding: 50px;
+            background-color: #f8fcdc;;
+        }
+        .info-box {
+            background-color: #f8fcdc;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+        }
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+        .info-box h5 {
+            font-weight: bold;
+            color: #006400;
+            margin-top: 15px;
+        }
+        .info-box p {
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        .info-box img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .info-boxes-section .col-md-4:first-child .info-box {
+    margin-top: -80px;
+    background-color: #f0fcf4;
+}
+
+
+.info-boxes-section .col-md-4:nth-child(2) .info-box {
+    margin-top: -30px;
+    background-color: #f8f4ec;
+}
+
+.info-boxes-section .col-md-4:last-child .info-box {
+    margin-top: -80px;
+    background-color: #f0fcf4;
+}
+        .footer {
+            background-color: #088c3c;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .footer-nav a.active,
+        .footer-nav a:hover {
+            color: #a6ff00;
+            /* Highlighted Green */
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+
+    .hero-text {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    .full-width-info-section {
+        padding: 30px 10px;
+    }
+
+    .info-boxes-section {
+        padding: 30px;
+    }
+
+    .info-box {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-box img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+}
+
+/* Medium devices (tablets, 576px to 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    
+    .hero-text {
+        font-size: 1.8rem;
+    }
+
+    .full-width-info-section {
+        padding: 40px 20px;
+    }
+
+    .info-boxes-section {
+        padding: 40px;
+    }
+
+    .info-box {
+        padding: 25px;
+    }
+
+    .info-box img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+
+    .footer-nav a {
+        font-size: 15px;
+    }
+}
+
+/* Large devices (desktops, 992px and above) */
+@media (min-width: 992px) {
+    .hero-text {
+        font-size: 2rem;
+    }
+
+    .info-boxes-section {
+        padding: 50px;
+    }
+
+    .info-box {
+        padding: 30px;
+    }
+
+    .info-box img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+}
+@media (max-width: 991.98px) {
+    .hero-video {
+        width: 100%;
+        height: auto;
+    }
+    .hero-section {
+        height: 70vh; /* Reduce height for smaller screens */
+    }
+    .hero-text {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        height: 60vh; /* Further reduce height for mobile */
+    }
+    .hero-video {
+        height: 100%;
+        object-fit: cover; /* Ensures full coverage */
+    }
+    .hero-text {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+}
+@media (max-width: 767.98px) {
+    .footer {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="Images/logo.jpg" alt="Dairy Brand Logo" class="logo me-2"> 
+        </a>
+    
+        <!-- Toggle Button for Mobile -->
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+        </button>
+    
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item">
+                <a href="aboutus.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="focus.html">Focus</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="ourfarms.html">Our Farms</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="products.html">Products</a>
+                <ul class="dropdown">
+                    <li><a href="freshmilk.html">Fresh Milk</a></li>
+                    <li><a href="flavored.html">Flavoured Milk</a></li>
+                    <li><a href="cheese.html">Cheese & Butter</a></li>
+                    <li><a href="yoghurt.html">Yoghurt</a></li>
+                    <li><a href="juices.html">Juices</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="brands.html">Brands</a>
+              <ul class="dropdown">
+                <li><a href="ambewela.html">Ambewela</a></li>
+                <li><a href="daily.html">Daily</a></li>
+                <li><a href="myjuicee.html">My Juicee</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="subsidiaries.html">Subsidiaries</a></li>
+            <li class="nav-item"><a href="innovation.html">Innovation</a></li>
+           
+            <li class="nav-item"><a href="newscenter.html">News Center</a></li>
+            <li class="nav-item">
+              <a href="#">Investor Relations</a>
+              <ul class="dropdown">
+                  <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                  <li><a href="reports.html">Reports</a></li>
+                  </ul>
+                  </li>
+            <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+      <div class="hero-section text-center">
+        <video class="hero-video" autoplay muted loop>
+            <source src="video/focus.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="full-width-info-section text-center">
+        <div class="container">
+            <h2 class="mb-5"></h2>
+            <p>We believe in doing better every step of the way, because it’s the right thing to do. For us, “better” means growing our own crops and putting our cows’ well
+              being at the top of our list. It means sustainable farming and agricultural innovation, to ensure the future of our planet. And it means bringing health and 
+              vitality to you by providing better nutrition from wholesome, real milk.</p>
+        </div>
+    </div>
+    <div class="container info-boxes-section">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="info-box">
+                    <img src="Images/quality.png" alt="Quality Icon">
+                    <h5> NOURISHING THE NATION THROUGH
+                        UNCOMPROMISED QUALITY</h5>
+                    <p>We are committed to providing nutritive 
+                        products to our consumers which are 
+                        manufactured according to the highest 
+                        quality standards. Our quality control 
+                        assurance division and systems in 
+                        place ensures that no process is 
+                        overlooked from sourcing of materials 
+                        to the storage of finished goods.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="info-box">
+                    <img src="Images/benchmark.png" alt="Benchmark Icon">
+                    <h5>SETTING THE BENCHMARK FOR
+                        DAIRY FARMS IN THE COUNTRY</h5>
+                    <p> Achieving sustainability is the most 
+                        important objective of the brand. In 
+                        order to achieve this LMF has 
+                        optimized all its processes for high 
+                        efficiency, high health and safety 
+                        standards and low environmental 
+                        impact. 
+                        Additionally, 
+                        LMF also 
+                        contributes to the sustainability of the 
+                        country through various funding and 
+                        CSR initiatives.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 mb-4">
+                <div class="info-box">
+                    <img src="Images/sustainability.png" alt="Sustainability Icon">
+                    <h5>COMMITTED TO ACHIEVING
+                        SUSTAINABILITY</h5>
+                    <p>The two farms operated under LMF 
+                        are adorned with lush ryegrass from 
+                        New Zealand that provide optimum 
+                        grazing conditions for the cattle. 
+                        Animal Care and Process Control are 
+                        also maintained at very high 
+                        standards with the incorporation of 
+                        global technologies and knowledge.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <nav class="footer-nav">
+            <a href="index.html" >Home</a>
+            <a href="aboutus.html" class="active">About Us</a>
+            <a href="products.html" >Products</a>
+            <a href="innovation.html">Innovation</a>
+            <a href="brands.html">Brands</a>
+            <a href="subsidiaries.html">Subsidiaries</a>
+            <a href="newscenter.html">News Center</a>
+            <a href="boardofdirectors.html">Investor Relations</a>
+            <a href="contactus.html" >Contact Us</a>
+        </nav>
+        <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+    </footer>
+    <script>
+    $(document).ready(function () {
+        $(".footer-nav a").click(function () {
+            $(".footer-nav a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+  
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+    });
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
