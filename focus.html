@@ -353,7 +353,6 @@
 }
 @media (max-width: 991.98px) {
     .hero-video {
-        width: 100%;
         height: auto;
     }
     .hero-section {
@@ -370,8 +369,7 @@
         height: 60vh; /* Further reduce height for mobile */
     }
     .hero-video {
-        height: 100%;
-        object-fit: cover; /* Ensures full coverage */
+        height: auto;
     }
     .hero-text {
         font-size: 1.2rem;
@@ -458,12 +456,12 @@
         </ul>
     </nav>
     
-      <div class="hero-section text-center">
-        <video class="hero-video" autoplay muted loop>
-            <source src="video/focus.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <div class="hero-section text-center"></div>
+    <video class="hero-video" autoplay muted loop>
+        <source src="video/focus.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
     <div class="full-width-info-section text-center">
         <div class="container">
             <h2 class="mb-5"></h2>
