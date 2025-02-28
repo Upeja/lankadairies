@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fcdc;
+        }
+        
+        .navbar {
+  background-color: #8bc34a; /* Green color */
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo {
+    height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.navbar {
+    background-color: #8bc34a;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-item a:hover {
+    background-color: #689f38;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8bc34a;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #8bc34a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-item a {
+        padding: 12px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.footer {
+            background-color: #088c3c;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+.footer-nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer-nav a.active,
+.footer-nav a:hover {
+    color: #a6ff00;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="Images/logo.jpg" alt="Dairy Brand Logo" class="logo me-2"> 
+        </a>
+    
+        <!-- Toggle Button for Mobile -->
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+        </button>
+    
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item">
+                <a href="aboutus.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="focus.html">Focus</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="ourfarms.html">Our Farms</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="products.html">Products</a>
+                <ul class="dropdown">
+                    <li><a href="freshmilk.html">Fresh Milk</a></li>
+                    <li><a href="flavored.html">Flavoured Milk</a></li>
+                    <li><a href="cheese.html">Cheese & Butter</a></li>
+                    <li><a href="yoghurt.html">Yoghurt</a></li>
+                    <li><a href="juices.html">Juices</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="brands.html">Brands</a>
+              <ul class="dropdown">
+                <li><a href="ambewela.html">Ambewela</a></li>
+                <li><a href="daily.html">Daily</a></li>
+                <li><a href="myjuicee.html">My Juicee</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="subsidiaries.html">Subsidiaries</a></li>
+            <li class="nav-item"><a href="innovation.html">Innovation</a></li>
+           
+            <li class="nav-item"><a href="newscenter.html">News Center</a></li>
+            <li class="nav-item">
+              <a href="#">Investor Relations</a>
+              <ul class="dropdown">
+                  <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                  <li><a href="reports.html">Reports</a></li>
+                  </ul>
+                  </li>
+            <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4 text-success">Terms and Conditions</h2>
+                <p>Effective Date: 1 April 2025</p>
+                <h3 class="text-center mb-4 text-success">Introduction</h3>
+                <p>These Terms and Conditions ("Terms") govern your use of the website and services provided by Lanka Dairies Limited (referred to as "Lanka Dairies", "we", "our", or "us"). By accessing or using our website, you agree to comply with these Terms. If you do not agree with these Terms, please refrain from using our website and services.<br><br></p>
+                    <h3 class="text-center mb-4 text-success">Use of the Website</h3>
+                    <p> •	You must be at least 18 years old to use this website.<br><br>
+                        •	You agree to use our website only for lawful purposes and in a manner that does not infringe on the rights of others or restrict their use of the website.<br><br>
+                        •	Unauthorized use, reproduction, or modification of any content from this website is strictly prohibited.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Intellectual Property Rights</h3>
+                    <p> •	All content on this website, including text, images, logos, and trademarks, is the property of Lanka Dairies or its licensors and is protected by intellectual property laws.<br><br>
+                        •	You may not copy, distribute, modify, or use any content from our website without prior written consent.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Product Information and Availability</h3>
+                    <p> •	While we strive to provide accurate and up-to-date information on our products and services, we do not guarantee the completeness or accuracy of the content.<br><br>
+                        •	We reserve the right to modify, discontinue, or update product details, pricing, and availability at any time without prior notice.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Orders and Payments</h3>
+                    <p>•	By placing an order through our website, you agree to provide accurate and complete payment information.<br><br>
+                        •	We reserve the right to refuse or cancel orders at our discretion, including but not limited to instances of suspected fraud or unauthorized transactions.<br><br>
+                        •	All payments must be made in accordance with the terms specified at the time of purchase.<br><br>
+                        
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Limitation of Liability</h3>
+                    <p> •	Lanka Dairies will not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of this website or any products or services purchased from us.<br><br>
+                        •	We do not warrant that the website will be free from errors, viruses, or interruptions. Your use of the website is at your own risk.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Third-Party Links</h3>
+                    <p>•	Our website may contain links to third-party websites. These links are provided for convenience only, and we do not endorse or assume responsibility for the content, privacy policies, or practices of these external sites.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Changes to These Terms</h3>
+                    <p>•	We reserve the right to update or modify these Terms at any time without prior notice. Changes will be effective immediately upon posting. Your continued use of the website after updates constitutes acceptance of the revised Terms.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Governing Law</h3>
+                    <p>•	These Terms shall be governed and interpreted in accordance with the laws of [Insert Jurisdiction]. Any disputes arising from these Terms shall be resolved in the courts of [Insert Jurisdiction].<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Contact Us</h3>
+                    <p>If you have any questions regarding these Terms and Conditions, please contact:<br><br>
+                        Lanka Dairies Limited<br>
+                        Welisara, Ragama, Sri Lanka.<br>
+                        lakspray@lmfgroup.lk<br>
+                        (+94) 11 295 6266<br><br>
+                        </p>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="innovation.html">Innovation</a>
+            <a href="brands.html">Brands</a>
+            <a href="subsidiaries.html">Subsidiaries</a>
+            <a href="newscenter.html">News Center</a>
+            <a href="boardofdirectors.html">Investor Relations</a>
+            
+            <a href="privacy.html" >Privacy Policies</a>
+            <a href="terms.html" class="active">Terms & Conditions</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
+        <div class="social-media mt-3">
+            <div class="row justify-content-center align-items-center g-0">
+                <div class="col-auto text-start">
+                    <p>Ambewela:</p>
+                    <a href="https://www.facebook.com/Ambewela.lk" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ambewela.sl/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-auto text-center mx-5">
+                    <p>Daily:</p>
+                    <a href="https://www.facebook.com/DailyMilk.lk" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/dailymilksl/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-auto text-end">
+                    <p>My Juicee:</p>
+                    <a href="https://www.facebook.com/myjuicee" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/myjuiceelk/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright mt-3">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".footer-nav a").click(function () {
+                $(".footer-nav a").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navMenu = document.querySelector(".nav-menu");
+      
+            menuToggle.addEventListener("click", function () {
+                navMenu.classList.toggle("active");
+            });
+        });
+      </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>

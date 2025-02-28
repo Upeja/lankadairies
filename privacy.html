@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fcdc;
+        }
+        
+        .navbar {
+  background-color: #8bc34a; /* Green color */
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo {
+    height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.navbar {
+    background-color: #8bc34a;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-item a:hover {
+    background-color: #689f38;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8bc34a;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Toggle Button Styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #8bc34a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-item a {
+        padding: 12px;
+        display: block;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.footer {
+            background-color: #088c3c;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+.footer-nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer-nav a.active,
+.footer-nav a:hover {
+    color: #a6ff00;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="Images/logo.jpg" alt="Dairy Brand Logo" class="logo me-2"> 
+        </a>
+    
+        <!-- Toggle Button for Mobile -->
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i> <!-- FontAwesome Icon -->
+        </button>
+    
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item">
+                <a href="aboutus.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="focus.html">Focus</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="ourfarms.html">Our Farms</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="products.html">Products</a>
+                <ul class="dropdown">
+                    <li><a href="freshmilk.html">Fresh Milk</a></li>
+                    <li><a href="flavored.html">Flavoured Milk</a></li>
+                    <li><a href="cheese.html">Cheese & Butter</a></li>
+                    <li><a href="yoghurt.html">Yoghurt</a></li>
+                    <li><a href="juices.html">Juices</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="brands.html">Brands</a>
+              <ul class="dropdown">
+                <li><a href="ambewela.html">Ambewela</a></li>
+                <li><a href="daily.html">Daily</a></li>
+                <li><a href="myjuicee.html">My Juicee</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="subsidiaries.html">Subsidiaries</a></li>
+            <li class="nav-item"><a href="innovation.html">Innovation</a></li>
+           
+            <li class="nav-item"><a href="newscenter.html">News Center</a></li>
+            <li class="nav-item">
+              <a href="#">Investor Relations</a>
+              <ul class="dropdown">
+                  <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                  <li><a href="reports.html">Reports</a></li>
+                  </ul>
+                  </li>
+            <li class="nav-item"><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4 text-success">Privacy Policy</h2>
+                <p>Effective Date: 1 April 2025</p>
+                <h3 class="text-center mb-4 text-success">Introduction</h3>
+                <p>This privacy statement provides information on the processing of personal data by Lanka Dairies Limited and its affiliated group companies (referred to as "Lanka Dairies", "we", "our" or "us").<br><br>
+                    "Personal data" means any information relating to an identified or identifiable individual. This privacy statement does not apply to data about companies.<br><br>
+                    At Lanka Dairies, we take your privacy seriously. When you purchase our products, use our services, or interact with us, you may share personal data with us. The purpose of this privacy statement is to be upfront about the information we collect, how we use it, who we share it with, and how you can exercise your privacy rights, along with other relevant privacy-related information.<br><br>
+                    Please read this privacy statement carefully in conjunction with our website terms and conditions. Additionally, please review the privacy terms governing any specific campaigns, promotions, and contracts that you enter into with us to fully understand how we handle your personal data.<br><br>
+                    If you have any questions about our privacy practices or wish to access or request corrections to any personal data we hold about you, please contact us (see ‘How to Contact Us’ below).<br><br>
+                    We may update or revise this privacy statement periodically. Any changes will be reflected here and will take effect either immediately or when we notify you. Continued engagement with us after such changes are published indicates your agreement to be bound by this privacy statement. This statement applies from 1 April 2025.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Information We Collect</h3>
+                    <p>We may collect personal and non-personal data, including but not limited to:<br><br>
+                        •	Personal Information: Full name, email address, phone number, mailing address, and any other information you provide voluntarily through contact forms, account registrations, or customer service interactions.<br><br>
+                        •	Technical Data: IP address, browser type, operating system, device type, and browsing behavior on our website.<br><br>
+                        •	Transaction Data: Payment details, purchase history, and billing information if you make transactions with us.<br><br>
+                        •	Cookies and Tracking Technologies: We use cookies, web beacons, and similar tracking tools to analyze website traffic, customize content, and enhance your experience. You may adjust your browser settings to refuse cookies if preferred.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">How We Use Your Information</h3>
+                    <p>Your personal information may be used for the following purposes:<br><br>
+                        •	To provide, maintain, and improve our website, services, and products.<br><br>
+                        •	To process transactions, manage payments, and send purchase confirmations.<br><br>
+                        •	To respond to inquiries, provide customer support, and enhance your user experience.<br><br>
+                        •	To send promotional communications, newsletters, and service updates (you may opt out at any time).<br><br>
+                        •	To conduct research, data analysis, and performance monitoring to improve our offerings.<br><br>
+                        •	To comply with legal and regulatory obligations and prevent fraudulent activities.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Sharing Your Information</h3>
+                    <p>We do not sell or trade your personal information. However, we may share data with:<br><br>
+                        •	Service Providers: Third-party vendors assisting with website hosting, payment processing, analytics, and marketing services.<br><br>
+                        •	Regulatory and Legal Authorities: When required by law or to protect our rights, safety, and compliance with legal obligations.<br><br>
+                        •	Business Partners: If necessary, to facilitate relevant services or promotional offers in collaboration with trusted partners.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Data Protection and Security</h3>
+                    <p>We implement robust security measures, including encryption, secure servers, and access controls, to protect your personal information from unauthorized access, misuse, or disclosure. However, no method of transmission over the internet is entirely secure, and we encourage users to take precautions when sharing personal data online.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Your Rights and Choices</h3>
+                    <p>You may have the following rights concerning your personal data:<br><br>
+                        •	The right to access, update, or correct your information.<br><br>
+                        •	The right to request deletion of your personal data in certain circumstances.<br><br>
+                        •	The right to withdraw consent for certain processing activities.<br><br>
+                        •	The right to opt out of marketing communications at any time.<br><br>
+                        To exercise these rights, please contact us at lakspray@lmfgroup.lk.<br><br>
+                        </p>
+                        <h3 class="text-center mb-4 text-success">Cookies and Tracking Technologies</h3>
+                    <p>Our website uses cookies and similar tracking technologies to enhance user experience and analyze website traffic. You can control cookie preferences through your browser settings or opt out of tracking technologies.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Third-Party Links</h3>
+                    <p>Our website may contain links to external sites operated by third parties. Lanka Dairies Limited is not responsible for their privacy practices, and we encourage you to review their privacy policies before sharing any personal data.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Updates to This Privacy Policy</h3>
+                    <p>We reserve the right to update this Privacy Policy periodically. Any changes will be reflected on this page with an updated effective date. We encourage users to review this policy regularly for any updates.<br><br>
+                    </p>
+                    <h3 class="text-center mb-4 text-success">Contact Us</h3>
+                    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact:<br><br>
+                        Lanka Dairies Limited<br>
+                        Welisara, Ragama, Sri Lanka.<br>
+                        lakspray@lmfgroup.lk<br>
+                        (+94) 11 295 6266<br><br>
+                        </p>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <nav class="footer-nav">
+            <a href="index.html" >Home</a>
+            <a href="aboutus.html" >About Us</a>
+            <a href="products.html" >Products</a>
+            <a href="innovation.html" >Innovation</a>
+            <a href="brands.html">Brands</a>
+            <a href="subsidiaries.html">Subsidiaries</a>
+            <a href="newscenter.html">News Center</a>
+            <a href="boardofdirectors.html">Investor Relations</a>
+            
+            <a href="privacy.html" class="active">Privacy Policies</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="contactus.html" >Contact Us</a>
+        </nav>
+        <div class="social-media mt-3">
+            <div class="row justify-content-center align-items-center g-0">
+                <div class="col-auto text-start">
+                    <p>Ambewela:</p>
+                    <a href="https://www.facebook.com/Ambewela.lk" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ambewela.sl/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-auto text-center mx-5">
+                    <p>Daily:</p>
+                    <a href="https://www.facebook.com/DailyMilk.lk" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/dailymilksl/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-auto text-end">
+                    <p>My Juicee:</p>
+                    <a href="https://www.facebook.com/myjuicee" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/myjuiceelk/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".footer-nav a").click(function () {
+                $(".footer-nav a").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navMenu = document.querySelector(".nav-menu");
+      
+            menuToggle.addEventListener("click", function () {
+                navMenu.classList.toggle("active");
+            });
+        });
+      </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>

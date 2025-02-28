@@ -192,6 +192,10 @@
     margin-top: 10px;
     font-size: 14px;
 }
+
+.social-media mt-3 {
+    color: white;
+}
 @media (max-width: 768px) {
     .cover-image {
         height: 60vh;
@@ -282,14 +286,28 @@
   <div class="cover-image" style="background-image: url('Images/farm.jpg'); height: 100vh; background-size: cover; background-position: center; width: 100%;"></div>
 
     <div class="container report-section">
-      <h2>Annual Report</h2>
-      
-      <a href="Reports/annual-report.pdf" download>
-          <img src="Images/report.png" alt="Annual Report" class="img-fluid rounded shadow report-image">
-      </a>
-      <p>Report Year: 2023</p>
-  </div>
-  
+        <h2>Annual Reports</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="Reports/annual-report-2023.pdf" download>
+                    <img src="Images/report.png" alt="Annual Report 2023" class="img-fluid rounded shadow report-image">
+                </a>
+                <p>2023/2024</p>
+            </div>
+            <div class="col-md-4">
+                <a href="Reports/annual-report-2022.pdf" download>
+                    <img src="Images/report22.png" alt="Annual Report 2022" class="img-fluid rounded shadow report-image">
+                </a>
+                <p>2022/2023</p>
+            </div>
+            <div class="col-md-4">
+                <a href="Reports/annual-report-2021.pdf" download>
+                    <img src="Images/report21.png" alt="Annual Report 2021" class="img-fluid rounded shadow report-image">
+                </a>
+                <p>2021/2022</p>
+            </div>
+        </div>
+    </div>
 
   <footer class="footer">
     <nav class="footer-nav">
@@ -301,9 +319,31 @@
         <a href="subsidiaries.html">Subsidiaries</a>
         <a href="newscenter.html" >News Center</a>
         <a href="boardofdirectors.html" class="active">Investor Relations</a>
+        
+        <a href="privacy.html" >Privacy Policies</a>
+        <a href="terms.html">Terms & Conditions</a>
         <a href="contactus.html" >Contact Us</a>
     </nav>
-    <p class="copyright">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
+    <div class="social-media mt-3">
+        <div class="row justify-content-center align-items-center g-0">
+            <div class="col-auto text-start">
+                <p style="color: white;">Ambewela:</p>
+                <a href="https://www.facebook.com/Ambewela.lk" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ambewela.sl/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="col-auto text-center mx-5">
+                <p style="color: white;">Daily:</p>
+                <a href="https://www.facebook.com/DailyMilk.lk" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/dailymilksl/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="col-auto text-end">
+                <p style="color: white;">My Juicee:</p>
+                <a href="https://www.facebook.com/myjuicee" class="btn btn-outline-light btn-social me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/myjuiceelk/" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <p class="copyright" style="color: white;">© 2025 LANKA DAIRIES. ALL RIGHTS RESERVED</p>
   </footer>
 <script>
 $(document).ready(function () {
