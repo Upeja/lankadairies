@@ -172,7 +172,7 @@
         }
 
         .subsidiaries-section {
-            padding: 50px 0;
+            padding: 50px;
             text-align: center;
         }
 
@@ -190,10 +190,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
             overflow: hidden;
+            max-width: 70%; /* Reduce the width of each subsidiary box */
+            margin: 0 auto; /* Center the box and reduce spacing */
+            margin-bottom: 0px; /* Reduce the gap between sections */
+            padding: 10px; /* Adjust padding to ensure spacing is minimal */
         }
 
         .subsidiary .col-md-6 {
-            padding: 10px; /* Remove padding from columns */
+            padding: 0; /* Ensure no padding inside columns */
         }
 
         .subsidiary img {
@@ -202,30 +206,25 @@
             object-fit: cover; /* Ensures the image covers the entire column without distortion */
         }
 
-        .subsidiary img {
-            width: 100%;
-            height: auto;
-        }
-
         .subsidiary-content {
             flex: 1;
-            padding: 30px 10px;
+            padding: 15px; /* Reduce padding inside content */
+            min-height: 250px; /* Adjust this based on your design */
+            
         }
 
         .subsidiary-title {
             color: #068c44;
-            font-size: 18px;
             font-weight: bold;
-            margin: 30px;
+            font-size: 16px; /* Reduce title size */
+            margin: 10px; /* Reduce space around the title */
         }
 
         .subsidiary-description {
-            font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #555;
-            margin-top: 20px;
-            margin-left: 60px;
-            margin-right: 60px;
+            font-size: 15px; /* Reduce text size */
+            margin: 5px 20px; /* Reduce left/right margins */
             text-align: justify; /* Added justification */
         }
 
@@ -233,12 +232,15 @@
             background-color: #068c44;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 10px;
+            margin-top: 0px;
             text-decoration: none; /* Remove underline from link */
+            padding: 6px 12px; /* Reduce padding to make the button smaller */
+            font-size: 14px; /* Decrease font size */
+            border-radius: 4px; /* Slightly adjust border radius */
+            width: auto; /* Ensure button doesn’t stretch */
+            display: inline-block; /* Keep it from taking full width */    
         }
 
         .read-more-btn:hover {
